@@ -4,12 +4,14 @@ public class Game {
 	int scorePrecedent;
 	Boolean lastIsSpare;
 	int thereWasAStrike;
+	int nombreLancerUtilise;
 	
 	public Game() {
 		this.score =0;
 		this.scorePrecedent = 0;
 		this.lastIsSpare = false;
 		this.thereWasAStrike = 0;
+		this.nombreLancerUtilise = 0;
 	}
 
 	public void roll(int nombre) {
@@ -22,14 +24,20 @@ public class Game {
 			this.score+=nombre;
 		}
 		
-		if(nombre == 10) {
-			thereWasAStrike = 2;
-		}else if((nombre + this.scorePrecedent) == 10) {
+		if(nombre == 10 && nombreLancerUtilise%2 == 0) {
+//			System.out.println("STRIKE!!!");
+			thereWasAStrike += 2;
+			nombreLancerUtilise ++;
+		}else if((nombre + this.scorePrecedent) == 10 && nombreLancerUtilise%2 == 1) {
+//			System.out.println("SPARE!!!");
 			lastIsSpare = true;
 		}
 		
 		this.score+=nombre;
 		this.scorePrecedent = nombre;
+		nombreLancerUtilise++;
+
+//		System.out.println(this.score);
 	}
 	
 	

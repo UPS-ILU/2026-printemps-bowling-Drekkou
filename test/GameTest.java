@@ -8,11 +8,18 @@ class GameTest {
 	
 	@BeforeEach
 	public void init() {
+//		System.out.println("Debut test\n");
 		this.game = new Game();
 	}
 	
 	public void rollNombre(int nbrRoll, int ValeurRoll) {
 		for(int i=0; i<nbrRoll;i++)game.roll(ValeurRoll);
+	}
+	
+	public void rollTableau(int[] val) {
+		for(int i =0 ; i<val.length; i++) {
+			game.roll(val[i]);
+		}
 	}
 	
 	@Test
@@ -59,6 +66,15 @@ class GameTest {
 		
 
 		assertEquals(game.score(), 24);
+	}
+	
+	
+	@Test
+	void casGenerale() {
+		int[] val = {1, 2, 10, 0, 10, 4, 2, 0, 10, 6, 2, 0, 10, 6, 4, 8, 2, 2, 7};
+		rollTableau(val);
+
+		assertEquals(game.score(), 122);
 	}
 
 }
