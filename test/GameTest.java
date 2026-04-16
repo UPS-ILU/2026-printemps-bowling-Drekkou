@@ -83,4 +83,11 @@ class GameTest {
 		assertEquals(game.score(), 131);
 	}
 
+	@Test
+	void genie() {
+		rollNombre(12, 10);
+
+		assertEquals(game.score(), 300);
+	}
+
 }
