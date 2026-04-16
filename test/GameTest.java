@@ -11,6 +11,10 @@ class GameTest {
 		this.game = new Game();
 	}
 	
+	public void rollNombre(int nbrRoll, int ValeurRoll) {
+		for(int i=0; i<nbrRoll;i++)game.roll(ValeurRoll);
+	}
+	
 	@Test
 	void entréeVide() {
 		assertEquals(game.score(), 0);
@@ -18,24 +22,34 @@ class GameTest {
 	
 	@Test
 	void vingtRollZero() {
-		for(int i=0; i<20;i++)game.roll(0);
-		
+		rollNombre(20, 0);
 		assertEquals(game.score(), 0);
 	}
 	
 	@Test
 	void vingtRollUn() {
-		for(int i=0; i<20;i++)game.roll(1);
-		
+		rollNombre(20, 1);
 		assertEquals(game.score(), 20);
 	}
 	
 	@Test
 	void dixRollUnDixRollDeux(){
-		for(int i=0; i<10;i++)game.roll(1);
-		for(int i=0; i<10;i++)game.roll(2);
+		rollNombre(10, 1);
+		rollNombre(10, 2);
 		
 		assertEquals(game.score(), 30);
 	}
+	
+	
+	@Test
+	void testSpare() {
+		game.roll(7);
+		game.roll(3);
+		game.roll(4);
+		rollNombre(17, 0);
+		assertEquals(game.score(), 18);
+	}
+	
+	
 
 }

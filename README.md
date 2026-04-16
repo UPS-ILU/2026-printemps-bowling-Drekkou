@@ -13,8 +13,8 @@
 - [ ] B21
 - [ ] B22
 Backlog : 
-[ ] Niveau 1
-[ ] Niveau 2
+[X] Niveau 1
+[X] Niveau 2
 [ ] Niveau 3
 [ ] Niveau 4
 [ ] Niveau 5
