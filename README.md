@@ -15,7 +15,7 @@
 Backlog : 
 [X] Niveau 1
 [X] Niveau 2
-[ ] Niveau 3
+[X] Niveau 3
 [ ] Niveau 4
 [ ] Niveau 5
 [ ] Niveau 6

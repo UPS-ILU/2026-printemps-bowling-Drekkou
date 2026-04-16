@@ -50,6 +50,15 @@ class GameTest {
 		assertEquals(game.score(), 18);
 	}
 	
-	
+	@Test
+	void testStrike() {
+		game.roll(10);
+		game.roll(3);
+		game.roll(4);
+		rollNombre(16, 0);
+		
+
+		assertEquals(game.score(), 24);
+	}
 
 }
