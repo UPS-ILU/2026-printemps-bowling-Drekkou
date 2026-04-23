@@ -55,7 +55,7 @@ public class Game {
 		for(int i = 0; i<20;i+=2) {
 			if(frameTab[i] == 10) {
 				//c'est un strike
-			}else if()
+			}else if() 
 		}
 	}
 }
